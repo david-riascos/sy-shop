@@ -1,0 +1,22 @@
+{
+  "moneda": "COP",
+  "nota": "Catalogo 100% ficticio con fines educativos. Precios en pesos colombianos (COP).",
+  "productos": [
+    { "sku": "CAM-001", "nombre": "Camiseta Basica Blanca", "categoria": "Camisas", "precio": 45000, "stock": 40, "tallas": ["S", "M", "L", "XL"], "descripcion": "Camiseta de algodon peinado, corte regular, cuello redondo. Ideal para todos los dias." },
+    { "sku": "CAM-002", "nombre": "Camiseta Estampada Hello World", "categoria": "Camisas", "precio": 59000, "stock": 35, "tallas": ["S", "M", "L", "XL"], "descripcion": "Camiseta negra con estampado minimalista de la clasica frase de programador." },
+    { "sku": "CAM-003", "nombre": "Camisa Oxford Azul", "categoria": "Camisas", "precio": 89000, "stock": 20, "tallas": ["S", "M", "L", "XL"], "descripcion": "Camisa manga larga de tela oxford, cuello con botones, azul cielo." },
+    { "sku": "CAM-004", "nombre": "Polo Pique Negro", "categoria": "Camisas", "precio": 69000, "stock": 25, "tallas": ["S", "M", "L", "XL"], "descripcion": "Polo de tela pique con cuello clasico y tres botones." },
+    { "sku": "GOR-001", "nombre": "Gorra Snapback Negra", "categoria": "Gorras", "precio": 39000, "stock": 30, "tallas": ["Unica"], "descripcion": "Gorra plana con cierre ajustable, visera rigida y logo bordado." },
+    { "sku": "GOR-002", "nombre": "Gorra Trucker Roja", "categoria": "Gorras", "precio": 42000, "precio_oferta": 35000, "stock": 18, "tallas": ["Unica"], "descripcion": "Gorra estilo trucker con malla trasera transpirable. En oferta." },
+    { "sku": "GOR-003", "nombre": "Gorra Beisbolera Azul Marino", "categoria": "Gorras", "precio": 45000, "stock": 22, "tallas": ["Unica"], "descripcion": "Gorra curva de algodon con correa metalica ajustable." },
+    { "sku": "CAD-001", "nombre": "Cadena Eslabon Plateada", "categoria": "Cadenas", "precio": 75000, "stock": 15, "tallas": ["50 cm", "60 cm"], "descripcion": "Cadena de acero inoxidable con eslabones planos, acabado plateado." },
+    { "sku": "CAD-002", "nombre": "Cadena Cubana Dorada", "categoria": "Cadenas", "precio": 120000, "stock": 10, "tallas": ["50 cm", "60 cm"], "descripcion": "Cadena estilo cubano de acero con bano dorado. Pieza ficticia de demostracion." },
+    { "sku": "CAD-003", "nombre": "Cadena con Dije de Ancla", "categoria": "Cadenas", "precio": 65000, "stock": 12, "tallas": ["45 cm"], "descripcion": "Cadena fina con dije de ancla, acabado plateado." },
+    { "sku": "HOD-001", "nombre": "Buzo con Capucha Gris", "categoria": "Buzos", "precio": 129000, "stock": 14, "tallas": ["S", "M", "L", "XL"], "descripcion": "Buzo de felpa afelpada con capucha y bolsillo canguro." },
+    { "sku": "HOD-002", "nombre": "Buzo Cremallera Negro", "categoria": "Buzos", "precio": 149000, "stock": 9, "tallas": ["S", "M", "L", "XL"], "descripcion": "Buzo con cremallera completa, bolsillos laterales y puños elasticos." },
+    { "sku": "ACC-001", "nombre": "Morral Urbano Negro", "categoria": "Accesorios", "precio": 95000, "stock": 16, "tallas": ["Unica"], "descripcion": "Morral impermeable con compartimento para portatil de 15 pulgadas." },
+    { "sku": "ACC-002", "nombre": "Pulsera de Cuero Trenzada", "categoria": "Accesorios", "precio": 35000, "stock": 40, "tallas": ["Unica"], "descripcion": "Pulsera de cuero sintetico trenzado con cierre magnetico." },
+    { "sku": "ACC-003", "nombre": "Medias Deportivas Pack x3", "categoria": "Accesorios", "precio": 28000, "stock": 50, "tallas": ["Unica"], "descripcion": "Pack de tres pares de medias deportivas de algodon." },
+    { "sku": "ACC-004", "nombre": "Gafas de Sol Retro", "categoria": "Accesorios", "precio": 79000, "stock": 0, "tallas": ["Unica"], "descripcion": "Gafas de sol con montura retro y proteccion UV400. Agotadas (para probar ese estado)." }
+  ]
+}

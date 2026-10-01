@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Tienda Ficticia{% endblock %} | Symfony</title>
+    <link rel="stylesheet" href="{{ asset('css/tienda.css') }}">
+</head>
+<body>
+    <header class="cabecera">
+        <a class="marca" href="{{ path('catalogo') }}">Tienda Ficticia</a>
+        <nav>
+            <a href="{{ path('catalogo') }}">Catalogo</a>
+            <a href="{{ path('carrito') }}">Carrito ({{ carrito.cantidadTotal }})</a>
+        </nav>
+    </header>
+
+    <main class="contenedor">
+        {% for tipo, mensajes in app.flashes %}
+            {% for mensaje in mensajes %}
+                <p class="aviso aviso-{{ tipo }}">{{ mensaje }}</p>
+            {% endfor %}
+        {% endfor %}
+
+        {% block body %}{% endblock %}
+    </main>
+
+    <footer class="pie">
+        Tienda de practica hecha con Symfony. Todos los productos y pedidos son ficticios y con fines educativos.
+    </footer>
+</body>
+</html>

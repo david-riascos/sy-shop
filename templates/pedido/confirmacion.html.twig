@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pedido confirmado{% endblock %}
+
+{% block body %}
+    <h1>Pedido #{{ pedido.id }} confirmado</h1>
+    <p>Gracias, {{ pedido.nombreCliente }}. Este pedido es de practica: no se cobrara ni se enviara nada.</p>
+
+    <table class="tabla">
+        <thead><tr><th>Producto</th><th>Precio</th><th>Cantidad</th><th>Subtotal</th></tr></thead>
+        <tbody>
+            {% for item in pedido.items %}
+                <tr>
+                    <td>{{ item.nombreProducto }} ({{ item.sku }})</td>
+                    <td>{{ item.precioUnitario|cop }}</td>
+                    <td>{{ item.cantidad }}</td>
+                    <td>{{ item.subtotal|cop }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot><tr><th colspan="3">Total</th><th class="total">{{ pedido.total|cop }}</th></tr></tfoot>
+    </table>
+
+    <p><a class="boton" href="{{ path('catalogo') }}">Seguir mirando el catalogo</a></p>
+{% endblock %}

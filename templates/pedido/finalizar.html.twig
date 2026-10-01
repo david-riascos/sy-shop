@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Finalizar compra{% endblock %}
+
+{% block body %}
+    <h1>Finalizar compra</h1>
+
+    <p>Resumen: {{ lineas|length }} producto(s), total <strong>{{ total|cop }}</strong>.</p>
+    <p class="nota">Tienda ficticia: no se realiza ningun cobro ni se envia nada. No escribas datos reales.</p>
+
+    {{ form_start(formulario) }}
+        {{ form_widget(formulario) }}
+    {{ form_end(formulario) }}
+{% endblock %}

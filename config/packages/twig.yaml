@@ -1,0 +1,10 @@
+twig:
+    file_name_pattern: '*.twig'
+    form_themes: ['form_div_layout.html.twig']
+    globals:
+        # Permite mostrar el contador del carrito en la cabecera de todas las paginas.
+        carrito: '@App\Service\CarritoService'
+
+when@test:
+    twig:
+        strict_variables: true

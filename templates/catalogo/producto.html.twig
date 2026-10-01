@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ producto.nombre }}{% endblock %}
+
+{% block body %}
+    <p><a href="{{ path('catalogo', {categoria: producto.categoria.slug}) }}">&larr; {{ producto.categoria.nombre }}</a></p>
+
+    <article class="detalle">
+        <div class="imagen grande" role="img" aria-label="Imagen ilustrativa"></div>
+        <div>
+            <h1>{{ producto.nombre }}</h1>
+            <p class="precio">
+                {% if producto.estaEnOferta %}
+                    <s>{{ producto.precio|cop }}</s> <strong>{{ producto.precioActual|cop }}</strong>
+                    <span class="etiqueta">Oferta</span>
+                {% else %}
+                    <strong>{{ producto.precioActual|cop }}</strong>
+                {% endif %}
+            </p>
+            <p>{{ producto.descripcion }}</p>
+            <p><strong>Talla:</strong> {{ producto.tallas|join(', ') }}</p>
+            <p><strong>SKU:</strong> {{ producto.sku }}</p>
+
+            {% if producto.estaDisponible %}
+                <p>{{ producto.stock }} unidades disponibles</p>
+                <form method="post" action="{{ path('carrito_agregar', {sku: producto.sku}) }}">
+                    <input type="hidden" name="_token" value="{{ csrf_token('carrito') }}">
+                    <button type="submit">Añadir al carrito</button>
+                </form>
+            {% else %}
+                <p class="agotado">Agotado</p>
+            {% endif %}
+        </div>
+    </article>
+{% endblock %}

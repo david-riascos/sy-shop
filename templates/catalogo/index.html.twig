@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ categoriaActual ? categoriaActual.nombre : 'Catalogo' }}{% endblock %}
+
+{% block body %}
+    <h1>{{ categoriaActual ? categoriaActual.nombre : 'Catalogo' }}</h1>
+
+    <nav class="filtros" aria-label="Categorias">
+        <a href="{{ path('catalogo') }}" {% if not categoriaActual %}class="activa"{% endif %}>Todas</a>
+        {% for categoria in categorias %}
+            <a href="{{ path('catalogo', {categoria: categoria.slug}) }}"
+               {% if categoriaActual and categoriaActual.id == categoria.id %}class="activa"{% endif %}>{{ categoria.nombre }}</a>
+        {% endfor %}
+    </nav>
+
+    <p class="cuenta">Mostrando {{ productos|length }} productos</p>
+
+    <ul class="productos">
+        {% for producto in productos %}
+            <li class="producto">
+                <a href="{{ path('producto', {sku: producto.sku}) }}">
+                    <div class="imagen" role="img" aria-label="Imagen ilustrativa"></div>
+                    <h2>{{ producto.nombre }}</h2>
+                </a>
+                <p class="precio">
+                    {% if producto.estaEnOferta %}
+                        <s>{{ producto.precio|cop }}</s> <strong>{{ producto.precioActual|cop }}</strong>
+                        <span class="etiqueta">Oferta</span>
+                    {% else %}
+                        <strong>{{ producto.precioActual|cop }}</strong>
+                    {% endif %}
+                </p>
+                {% if producto.estaDisponible %}
+                    <form method="post" action="{{ path('carrito_agregar', {sku: producto.sku}) }}">
+                        <input type="hidden" name="_token" value="{{ csrf_token('carrito') }}">
+                        <button type="submit">Añadir al carrito</button>
+                    </form>
+                {% else %}
+                    <p class="agotado">Agotado</p>
+                {% endif %}
+            </li>
+        {% else %}
+            <li>No hay productos en esta categoria.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

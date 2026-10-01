@@ -1,0 +1,45 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; color: #1b1b1b; background: #fafafa; }
+a { color: inherit; }
+
+.cabecera { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: #111; color: #fff; }
+.cabecera a { color: #fff; text-decoration: none; margin-left: 1.5rem; }
+.cabecera .marca { margin-left: 0; font-weight: 700; font-size: 1.2rem; }
+
+.contenedor { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+.pie { text-align: center; padding: 2rem 1rem; color: #666; font-size: 0.9rem; }
+
+.filtros { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
+.filtros a { padding: 0.35rem 0.9rem; border: 1px solid #ccc; border-radius: 999px; text-decoration: none; background: #fff; }
+.filtros a.activa { background: #111; color: #fff; border-color: #111; }
+.cuenta { color: #666; }
+
+.productos { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem; }
+.producto { background: #fff; border: 1px solid #e5e5e5; border-radius: 8px; padding: 1rem; text-align: center; }
+.producto a { text-decoration: none; }
+.producto h2 { font-size: 1rem; margin: 0.6rem 0; }
+.imagen { aspect-ratio: 1; background: #eee linear-gradient(135deg, #f3f3f3, #ddd); border-radius: 6px; }
+.imagen.grande { min-width: 280px; }
+.precio { margin: 0.4rem 0; }
+.etiqueta { background: #c62828; color: #fff; font-size: 0.75rem; padding: 0.1rem 0.5rem; border-radius: 4px; margin-left: 0.3rem; }
+.agotado { color: #c62828; font-weight: 600; }
+
+.detalle { display: grid; grid-template-columns: minmax(280px, 1fr) 1fr; gap: 2rem; }
+@media (max-width: 700px) { .detalle { grid-template-columns: 1fr; } }
+
+button, .boton { padding: 0.6rem 1.2rem; font-size: 1rem; cursor: pointer; background: #111; color: #fff; border: 0; border-radius: 6px; text-decoration: none; display: inline-block; }
+button.secundario { background: #fff; color: #111; border: 1px solid #999; padding: 0.3rem 0.8rem; }
+
+.tabla { width: 100%; border-collapse: collapse; background: #fff; }
+.tabla th, .tabla td { padding: 0.7rem; border-bottom: 1px solid #e5e5e5; text-align: left; }
+.tabla .total { font-size: 1.1rem; }
+
+.aviso { padding: 0.7rem 1rem; border-radius: 6px; }
+.aviso-exito { background: #e8f5e9; color: #1b5e20; }
+.aviso-error { background: #ffebee; color: #b71c1c; }
+.nota { color: #666; font-size: 0.9rem; }
+
+form div { margin-bottom: 0.8rem; }
+form label { display: block; font-weight: 600; margin-bottom: 0.25rem; }
+form input[type=text], form input[type=email] { width: 100%; max-width: 420px; padding: 0.5rem; }
+form ul { color: #b71c1c; padding-left: 1.2rem; margin: 0.25rem 0; }
